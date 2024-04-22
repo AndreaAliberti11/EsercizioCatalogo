@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+.img-top-card {
+width: 200px;
+height: 300px;
+margin-right: auto;
+margin-left: auto;
+}
+
+.imDettaglio {
+width: 600px;
+height: 600px;
+margin-right: auto;
+margin-left: auto;
+}
+
+#logo {
+width: 400px;
+height: 200px;
+}
+
+#sfondo {
+ background-color: blue;
+}
+
+#container {
+ background-color: grey;
+}
+
+.campi {
+    width: 470px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}
+
+.caselle {
+    width: 480px;
+}
+
+#casellabutton {
+    width: 480px;
+    background-color: green;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+#tabella {
+border: 3px;
+border-color: red;
+margin-right: auto;
+margin-left: auto;
+}
+
+#colore {
+background-color: grey;
+}
+
+#title {
+text-align: center;
+font-family: Arial;
+}
+
+#vuoto, #totale, #loginTitle {
+text-align: center;
+}
+
+#errore {
+color: red;
+font-size: 20px;
+}
+

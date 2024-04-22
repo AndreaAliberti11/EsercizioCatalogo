@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Utente</title>
+    <link th:href="@{style.css}" rel="stylesheet">
+</head>
+<h1 id="loginTitle">
+    Accedi all'Area Riservata
+</h1>
+<body id="sfondo">
+       <p id="errore" th:if="${error != null}">Credenziali Errate</p>
+      <form action="/loginutente" method="post">
+          <div id="container">
+              <div class="campi">
+                  <input type="text" name="username" placeholder="username" class="caselle" />
+              </div>
+
+              <div class="campi">
+                  <input type="password" name="password" placeholder="password" class="caselle" />
+              </div>
+
+              <div class="campi">
+                  <input type="submit" value="Accedi" id="casellabutton" />
+              </div>
+          </div>
+      </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link th:href="@{style.css}" rel="stylesheet">
+</head>
+<body>
+     <div id="container">
+             <nav class="navbar navbar-expand-lg fixed-top-container">
+                 <a class="navbar-brand" href="#"><img th:src="@{logoSamsung.png}" alt="Amsterdam" id="logo" /></a>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mia_nav">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse justify-content-end" id="mia_nav">
+                     <ul class="navbar-nav" id="lista">
+                         <li class="navbar-item"><a class="nav-link" th:href="@{/loginutente}">Accedi all'area Utente</a></li>
+                     </ul>
+                 </div>
+             </nav>
+         <div class="row" th:each="articolo : ${articoli}">
+             <div class="col-xl-12 col-lg-10 col-md-8 col-sm-12">
+                 <div class="card bg-warning">
+                     <img class="img-top-card" th:src="@{${articolo.immagini}}" />
+                     <div class="card-body">
+                         <h5 class="card-title" th:text="${articolo.marchio.nome} + ' ' + ${articolo.modello}">
+                             Marca e Modello
+                         </h5>
+                         <p class="card-text" th:text="${articolo.sistemaOperativo}">Sistema Operativo</p>
+                         <p class="card-text" th:text="${articolo.memoria} + 'GB'">Memoria</p>
+                         <p class="card-text" th:text="${articolo.descrizione}">Descrizione</p>
+                         <div class="card-footer">
+                             <div th:text="${#numbers.formatDecimal(articolo.prezzo, 0, 'POINT', 2, 'COMMA')} + ' € '">Prezzo</div>
+                             <a class="btn btn-primary" th:href="@{/dettaglio(id=${articolo.id})}">Dettaglio prodotto</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
+</html>
